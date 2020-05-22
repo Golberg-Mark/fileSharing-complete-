@@ -14,7 +14,7 @@ npm i
 
 Add 'files' folder to fileSharing
 
-Create file users.db inside directory db.
+Create directory db in root of this project and create file user.db in this directory
 
 Run project:
 
