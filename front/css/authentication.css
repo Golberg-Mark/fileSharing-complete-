@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Baloo';
+    src: url('Baloo2-Regular.ttf');
+}
+
+* {
+    font-family: 'Baloo', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#authentication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    width: 20rem;
+    height: 30rem;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+#authentication input {
+    margin-bottom: 2rem;
+    border: 0;
+    border-bottom: 0.15rem solid #4dddff;
+}
+
+#authentication input:focus {
+    outline: 0;
+    border-color: #4eb8ff;
+}
+
+#authentication button {
+    background-color:#44c767;
+    border: 0;
+    border-radius:28px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:0.8rem 1.5rem;
+    text-decoration:none;
+}
+
+#authentication button:hover {
+    background-color: #32c739;
+}
+
+.title {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+.changeForm {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+    text-align: center;
+}
+
+.changeForm a {
+    color: #40a6ff;
+    text-decoration: none;
+}

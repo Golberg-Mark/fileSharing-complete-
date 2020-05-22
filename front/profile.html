@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profile</title>
+	<link href="main.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+	<aside class="aside">
+		<a href="/" class="logo" class="logo-link">
+			<img src="logo.png" alt="Main page" class="logo">
+		</a>
+		<a href="/profile" class="profile-link">
+			<img src="avatar.png" alt="Profile page" class="profile">
+		</a>
+	</aside>
+	<main>
+		<h2 class="title">PROFILE</h2>
+		<section class="avatar">
+			<img src="avatar.png" alt="Your avatar" class="img">
+			<label for="file-upload" class="file-upload">
+				Change new avatar
+			</label>
+			<input type="file" name="avatar" accept=".jpg, .jpeg, .png" id="file-upload">
+		</section>
+		<section class="settings">
+			<button type="button" id="reset-password">Reset password</button>
+		</section>
+	</main>
+	<script src="profile.js"></script>
+</body>
+</html>

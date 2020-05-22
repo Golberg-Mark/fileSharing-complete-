@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+	<link href="authentication.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0;
+			height: 100vh;
+			background: linear-gradient(to bottom left, rgba(255, 0, 97, 0.6), rgba(255, 35, 26, 0.6), rgba(255, 159, 32, 0.6));
+		}
+	</style>
+</head>
+<body>
+<form method="POST" id="authentication">
+	<p class="title">Registration</p>
+	<p class="changeForm">Already registered? Please <a href="/auth">Sign in</a></p>
+	<div>
+		<input type="text" id="login" placeholder="Login" maxlength="16" name="login">
+	</div>
+	<div>
+		<input type="email" id="email" placeholder="Email" maxlength="50" name="email">
+	</div>
+	<div>
+		<input type="password" id="pass" placeholder="Password" minlength="6" maxlength="40" name="password">
+	</div>
+	<div>
+		<button type="submit">Sign Up</button>
+	</div>
+</form>
+
+<script>
+	const form = document.querySelector('#authentication'),
+		login = document.querySelector('#login'),
+		email = document.querySelector('#email'),
+		password = document.querySelector('#pass');
+
+	form.onsubmit = (event) => {
+		if (login.value.length >= 4 && email.value.length >= 6) {
+			if (password.value.length >= 6) {
+				event.preventDefault();
+
+				async function sendData() {
+					let response = await fetch('/registration', {
+						method: 'POST',
+						body: JSON.stringify({
+							login: login.value,
+							email: email.value,
+							password: password.value
+						})
+					});
+
+					if (response.ok) {
+						let result = await response.text();
+
+						switch (result) {
+							case 'successful': {
+								document.location.href = '/';
+
+								break;
+							}
+							case 'exist': {
+								alert('Login already exist');
+
+								login.value = '';
+								email.value = '';
+								password.value = '';
+
+								break;
+							}
+							case 'short': {
+								alert('Login, email or password are short');
+
+								login.value = '';
+								email.value = '';
+								password.value = '';
+
+								break;
+							}
+							default: {
+								break;
+							}
+						}
+					}
+				}
+
+				sendData();
+			} else {
+				event.preventDefault();
+				alert('Password is short');
+			}
+		} else {
+			event.preventDefault();
+			alert('Login or email is short');
+		}
+	};
+</script>
+</body>
+</html>

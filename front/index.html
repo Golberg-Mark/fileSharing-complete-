@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FileSharing</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+	<aside class="aside">
+		<a href="/" class="logo-link">
+			<img src="logo.png" alt="Main page" class="logo">
+		</a>
+		<a href="/profile" class="profile-link">
+			<img src="avatar.png" alt="Profile page" class="profile">
+		</a>
+	</aside>
+	<main>
+		<p class="instruction">Сlick on the file to download. Right click on the file to give permissions for another user</p>
+		<label for="file-upload" class="new-file">
+
+		</label>
+		<input type="file" name="newFile" id="file-upload">
+		<section class="your-files">
+			<h2 class="file-title">Your files</h2>
+			<ul id="your-files">
+				<p class="no-uploaded">You don`t have uploaded files</p>
+			</ul>
+		</section>
+		<section class="shared-files">
+			<h2 class="file-title">Shared files</h2>
+			<ul id="shared-files">
+				<p class="no-shared">You don`t have shared files</p>
+			</ul>
+		</section>
+	</main>
+	<script src="file.js"></script>
+</body>
+</html>
