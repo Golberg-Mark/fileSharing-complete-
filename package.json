@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "md5": "^2.2.1",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "sqlite3": "^4.1.1",
     "sqlstring-sqlite": "^0.1.1"
   },
